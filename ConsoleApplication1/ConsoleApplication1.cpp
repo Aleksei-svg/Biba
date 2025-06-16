@@ -1,6 +1,32 @@
-﻿int main
-{
+﻿#include <iostream>
+#include <cstdlib>    // Для rand и srand
+#include <ctime>      // Для time
 
-	int a = 1234567;
-	double b = 1234567;
-};
+int main() {
+    std::srand(std::time(0)); // Инициализация генератора случайных чисел
+
+    std::string input;
+    std::cout << "Биба:\n"
+        << "\"Нажми на кнопку — получишь результат!\"\n\n";
+
+    std::cout << "Нажмите Enter, чтобы нажать на кнопку: ";
+    std::getline(std::cin, input);
+
+    // Массив возможных "результатов"
+    std::string results[] = {
+        "РЕЗУЛЬТАТ!",
+        "Сюрприз!",
+        "Фейерверк эмоций!",
+        "Подарочек!",
+        "Улыбка!",
+        "Аплодисменты!",
+        "Секретный приз!",
+        "Ничего... Попробуй ещё раз :)"
+    };
+
+    int index = std::rand() % (sizeof(results) / sizeof(results[0]));
+
+    std::cout << "\nРезультат: " << results[index] << "\n";
+
+    return 0;
+}
