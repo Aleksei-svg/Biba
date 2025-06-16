@@ -1,5 +1,6 @@
-﻿int main;
+﻿int main
 {
 
-	a = 1234567;
-}
+	int a = 1234567;
+	double b = 1234567;
+};
